@@ -6,7 +6,7 @@ file(GLOB C_SOURCES src/*.c src/eventing/*.c src/crypto/*.c src/io_uring/*.c)
 add_library(uSockets STATIC ${C_SOURCES})
 set_property(TARGET uSockets PROPERTY C_STANDARD 11)
 target_include_directories(uSockets PUBLIC src)
-target_compile_definitions(uSockets PUBLIC WITH_QUIC WITH_WOLFSSL)
+target_compile_definitions(uSockets PUBLIC LIBUS_NO_SSL)
 
 
 #clang -I/opt/homebrew/opt/llvm/include -flto -DLIBUS_NO_SSL -std=c11 -Isrc -O3 -c src/*.c src/eventing/*.c src/crypto/*.c src/io_uring/*.c
